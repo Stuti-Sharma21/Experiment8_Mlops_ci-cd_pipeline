@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v4 #v4 is checkout verion which means it with its help the willl find code in our rep
 
       - name: Setup Python #now we got code so we will install or setup python
-        uses: action/Setup-python@v5 
+        uses: actions/Setup-python@v5 
         with: #to specify verion of pyython
           python-version: "3.11"
 
