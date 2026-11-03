@@ -2,7 +2,7 @@
 name: CI/CD Pipeline #(continious integration and continious delievery/ comtinious deployment)
 on:
   push:
-    branches: [main] #if we dont give space it cant differenciate between connamn and value
+    branches: [master] #if we dont give space it cant differenciate between connamn and value
   workflow_dispatch: #instruction that after push start workflow whihc we will right below
 jobs:
   train-and-test:
