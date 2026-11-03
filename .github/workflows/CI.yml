@@ -1,0 +1,34 @@
+#fixed format
+name: CI/CD Pipeline #(continious integration and continious delievery/ comtinious deployment)
+on:
+  push:
+    branches: [main] #if we dont give space it cant differenciate between connamn and value
+  workflow_dispatch: #instruction that after push start workflow whihc we will right below
+jobs:
+  train-and-test:
+    runs-on: ubuntu-latest #github runner executes all jobs written all jobs wont execute on server but 
+    #rather on github runner for that we need and operating system here we are using ubuntu and -latest
+    # is the lastest verion at that time will be used(linix is nmore suitable tho)
+    steps:
+      - name: Download Project Code # it means from git repo it wil take code put int on runner to run
+        uses: actions/checkout@v4 #v4 is checkout verion which means it with its help the willl find code in our rep
+
+      - name: Setup Python #now we got code so we will install or setup python
+        uses: action/Setup-python@v5 
+        with: #to specify verion of pyython
+          python-version: "3.11"
+
+      - name: Install liberaries
+        run: pip install -r requirments.txt
+
+      - name: ML model Training
+        run: python train.py
+
+      - name: ML model Testing
+        run: python test.py
+# we have written this only ci pipeline
+# only name values and versions can be changed
+#now instructions for deployment
+
+
+        
