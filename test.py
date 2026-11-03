@@ -4,7 +4,7 @@ from sklearn.metrics import accuracy_score
 
 model=joblib.load('model.pkl')
 
-data=pd.read_csv('iris.csv')
+data=pd.read_csv("Iris.csv")
 data=data.drop("Id",axis=1)
 
 x=data.drop("Species",axis=1)
