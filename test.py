@@ -1,6 +1,6 @@
-import pandas as pandas
+import pandas as pd
 import joblib
-from sklearn.meterics import accuracy_score
+from sklearn.metrics import accuracy_score
 
 model=joblib.load('model.pkl')
 
@@ -8,7 +8,7 @@ data=pd.read_csv('iris.csv')
 data=data.drop("Id",axis=1)
 
 x=data.drop("Species",axis=1)
-y=data['species']
+y=data['Species']
 
 print(x.head())
 
@@ -17,7 +17,7 @@ accuracy=accuracy_score(pred,y)
 print(accuracy_score)
 
 assert len(pred)==len(y)
-assert accuracy=0.50
+assert accuracy>=0.50
 
 print("All Test Passed")
 

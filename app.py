@@ -1,5 +1,5 @@
-import joblibfrom flask 
-import Flask,request,jsonify
+import joblib 
+from flask import Flask, request, jsonify
 
 app=Flask(__name__) 
 
@@ -19,5 +19,5 @@ def predict():
     pred=model.predict([[s_l,s_w,p_l,p_w]])
     return jsonify({"prediction":pred(0)})
 
-if__name__=="__main__":
+if __name__ =="__main__":
     app.run(host="0.0.0.0",port=5001)
